@@ -1,0 +1,556 @@
+/* =============================================
+   Paróquia São Miguel Arcanjo - Custom Styles
+   ============================================= */
+
+/* ----- CSS Variables ----- */
+:root {
+  --primary: #1a3a5c;
+  --primary-light: #2a5a8c;
+  --primary-dark: #0d1f33;
+  --accent: #c9a84c;
+  --accent-light: #e8d49a;
+  --text-dark: #2c2c2c;
+  --text-light: #f8f9fa;
+  --bg-light: #f5f3ef;
+  --bg-white: #ffffff;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+}
+
+/* ----- Typography ----- */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+}
+
+/* ----- General ----- */
+.section-padding {
+  padding: 80px 0;
+}
+
+.bg-light {
+  background-color: var(--bg-light) !important;
+}
+
+/* ----- Navbar ----- */
+.navbar {
+  background: var(--primary-dark);
+  transition: var(--transition);
+  padding: 1rem 0;
+}
+
+.navbar.scrolled {
+  background: var(--primary-dark);
+  box-shadow: var(--shadow);
+  padding: 0.5rem 0;
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--accent) !important;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent) !important;
+}
+
+/* ----- Hero Section ----- */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  background: url('../images/sao-miguel-dark.jpeg') center center / cover no-repeat;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(13,31,51,0.85) 0%, rgba(26,58,92,0.75) 50%, rgba(42,90,140,0.7) 100%);
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+.hero-section .lead {
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.hero-section .btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--primary-dark);
+  font-weight: 600;
+  padding: 12px 30px;
+}
+
+.hero-section .btn-primary:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+.hero-section .btn-outline-light {
+  border-width: 2px;
+  padding: 12px 30px;
+  font-weight: 600;
+}
+
+.hero-section .btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ----- Priest Card ----- */
+.priest-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--accent);
+}
+
+.priest-photo-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 3rem;
+  color: var(--primary);
+}
+
+/* ----- Community Cards ----- */
+.community-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border-bottom: 4px solid transparent;
+  height: 100%;
+}
+
+.community-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-bottom-color: var(--accent);
+}
+
+.community-card i {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.community-card h5 {
+  color: var(--primary);
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+}
+
+.community-card p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* ----- Schedule Table ----- */
+/* ----- Schedule Tabs & Cards ----- */
+.schedule-tabs .nav-link {
+  color: var(--primary);
+  border-radius: 25px;
+  padding: 8px 18px;
+  margin: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.schedule-tabs .nav-link.active {
+  background: var(--primary);
+  color: white;
+}
+
+.schedule-tabs .nav-link:hover:not(.active) {
+  background: rgba(26, 58, 92, 0.1);
+}
+
+.schedule-day-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+  padding: 10px 0;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 14px 25px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+.schedule-item:hover {
+  background: rgba(26, 58, 92, 0.03);
+}
+
+.schedule-time {
+  background: var(--primary);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  min-width: 70px;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.schedule-item i.fa-church {
+  color: var(--accent);
+}
+
+.schedule-item i.fa-pray,
+.schedule-item i.fa-hands-praying {
+  color: var(--primary);
+}
+
+.schedule-item i.fa-sun {
+  color: #e6a817;
+}
+
+.schedule-item i.fa-heart {
+  color: #c0392b;
+}
+
+.schedule-item i.fa-users {
+  color: var(--primary);
+}
+
+/* ----- Event Cards ----- */
+.event-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--accent);
+  transition: var(--transition);
+}
+
+.event-card:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.event-date {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.event-card h5 {
+  color: var(--primary);
+  margin-top: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ----- Social Cards ----- */
+.social-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.social-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.social-card i {
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.text-instagram {
+  color: #E1306C;
+}
+
+.text-facebook {
+  color: #1877F2;
+}
+
+.text-youtube {
+  color: #FF0000;
+}
+
+/* ----- Contact Form ----- */
+.contact-form .form-control,
+.contact-form .form-select {
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  transition: var(--transition);
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(26, 58, 92, 0.15);
+}
+
+.contact-form .btn-primary {
+  background: var(--primary);
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.contact-form .btn-primary:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.btn-success {
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* ----- Footer ----- */
+.footer-section {
+  background: var(--primary-dark);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 60px 0 20px;
+}
+
+.footer-section h5 {
+  color: var(--accent);
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1.5rem;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-section a:hover {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-section .social-icons a {
+  font-size: 1.5rem;
+  margin-right: 15px;
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.footer-section .social-icons a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* ----- Scroll to Top Button ----- */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top-btn:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* ----- Navbar Logo ----- */
+.navbar-logo {
+  height: 40px;
+  width: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* ----- About Brasão ----- */
+.about-brasao {
+  max-width: 220px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* ----- Patron Image ----- */
+.patron-image {
+  max-height: 300px;
+  width: auto;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
+
+/* ----- Gallery ----- */
+.gallery-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-hover);
+}
+
+#galleryModal .modal-content {
+  background: transparent !important;
+}
+
+#galleryModal .modal-body img {
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+/* ----- Scroll Animations ----- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1rem;
+  }
+
+  .section-padding {
+    padding: 50px 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .hero-section .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+  }
+}
